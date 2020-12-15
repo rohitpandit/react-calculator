@@ -1,0 +1,45 @@
+.app{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    margin: auto ; 
+    width: fit-content;  
+    background-color:#F0F0F0; 
+    border: 2px solid black;
+    border-radius : 1rem;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.result{
+    display: flex;
+    flex-direction: row-reverse;
+    padding:1rem;
+    border: 3px solid black;
+    border-radius: .5rem;
+    background-color: white;
+    box-shadow: 3px 3px 3px grey;
+}
+
+.numbers{
+    display: flex;
+    flex-direction: column;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.num{
+    width: 5rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    border: 1px soid blac;
+    border-radius: .5rem;
+    background-color: grey;
+    margin: 1rem;
+    font-size: medium;
+    font-weight: 800;
+}
