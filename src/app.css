@@ -35,11 +35,12 @@
     height: 3rem;
     display: flex;
     justify-content: center;
+    align-items:center;
     padding: 1rem;
     border: 1px soid blac;
     border-radius: .5rem;
     background-color: grey;
     margin: 1rem;
-    font-size: medium;
+    font-size:large;
     font-weight: 800;
 }
