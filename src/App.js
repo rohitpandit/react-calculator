@@ -19,22 +19,22 @@ class App extends React.Component {
     for (let i = 0; i < 4; i++) {
       for (let j = 0; j < signs.length; j++) {
         if (signs[j] === '/' && i === 0) {
-          let res = nums[j] / nums[j + 1];
+          let res = nums[j] / nums[j + 1] || 0;
           nums.splice(j, 2, res);
           signs.splice(j, 1);
         }
         if (signs[j] === '*' && i === 1) {
-          let res = nums[j] * nums[j + 1];
+          let res = nums[j] * nums[j + 1] || 0;
           nums.splice(j, 2, res);
           signs.splice(j, 1);
         }
         if (signs[j] === '+' && i === 2) {
-          let res = nums[j] + nums[j + 1];
+          let res = nums[j] + nums[j + 1] || 0;
           nums.splice(j, 2, res);
           signs.splice(j, 1);
         }
         if (signs[j] === '-' && i === 3) {
-          let res = nums[j] - nums[j + 1];
+          let res = nums[j] - nums[j + 1] || 0;
           nums.splice(j, 2, res);
           signs.splice(j, 1);
         }
@@ -54,7 +54,7 @@ class App extends React.Component {
         }
         let res = 0;
         res = this.cal();
-        this.setState({nums:[], signs:[], show: res, last: res, flag: 1 });
+        this.setState({ nums: [], signs: [], show: res, last: res, flag: 1 });
       }
     } else if (
       char === 1 ||
@@ -97,64 +97,78 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='app'>
-        <h1 className='result'>{this.state.show}</h1>
-        <div className='numbers'>
-          <div className='row'>
-            <button onClick={(e) => this.handleButton(7, e)} className='num'>
-              7
-            </button>
-            <button onClick={(e) => this.handleButton(8, e)} className='num'>
-              8
-            </button>
-            <button onClick={(e) => this.handleButton(9, e)} className='num'>
-              9
-            </button>
-            <button onClick={(e) => this.handleButton('C', e)} className='num'>
-              C
-            </button>
-          </div>
-          <div className='row'>
-            <button onClick={(e) => this.handleButton(4, e)} className='num'>
-              4
-            </button>
-            <button onClick={(e) => this.handleButton(5, e)} className='num'>
-              5
-            </button>
-            <button onClick={(e) => this.handleButton(6, e)} className='num'>
-              6
-            </button>
-            <button onClick={(e) => this.handleButton('/', e)} className='num'>
-              /
-            </button>
-          </div>
-          <div className='row'>
-            <button onClick={(e) => this.handleButton(1, e)} className='num'>
-              1
-            </button>
-            <button onClick={(e) => this.handleButton(2, e)} className='num'>
-              2
-            </button>
-            <button onClick={(e) => this.handleButton(3, e)} className='num'>
-              3
-            </button>
-            <button onClick={(e) => this.handleButton('*', e)} className='num'>
-              *
-            </button>
-          </div>
-          <div className='row'>
-            <button onClick={(e) => this.handleButton(0, e)} className='num'>
-              0
-            </button>
-            <button onClick={(e) => this.handleButton('=', e)} className='num'>
-              =
-            </button>
-            <button onClick={(e) => this.handleButton('+', e)} className='num'>
-              +
-            </button>
-            <button onClick={(e) => this.handleButton('-', e)} className='num'>
-              -
-            </button>
+      <div className="page">
+        <div className='app'>
+          <h1 className='result'>{this.state.show}</h1>
+          <div className='numbers'>
+            <div className='row'>
+              <button onClick={(e) => this.handleButton(7, e)} className='num'>
+                7
+              </button>
+              <button onClick={(e) => this.handleButton(8, e)} className='num'>
+                8
+              </button>
+              <button onClick={(e) => this.handleButton(9, e)} className='num'>
+                9
+              </button>
+              <button
+                onClick={(e) => this.handleButton('C', e)}
+                className='num'>
+                C
+              </button>
+            </div>
+            <div className='row'>
+              <button onClick={(e) => this.handleButton(4, e)} className='num'>
+                4
+              </button>
+              <button onClick={(e) => this.handleButton(5, e)} className='num'>
+                5
+              </button>
+              <button onClick={(e) => this.handleButton(6, e)} className='num'>
+                6
+              </button>
+              <button
+                onClick={(e) => this.handleButton('/', e)}
+                className='num'>
+                /
+              </button>
+            </div>
+            <div className='row'>
+              <button onClick={(e) => this.handleButton(1, e)} className='num'>
+                1
+              </button>
+              <button onClick={(e) => this.handleButton(2, e)} className='num'>
+                2
+              </button>
+              <button onClick={(e) => this.handleButton(3, e)} className='num'>
+                3
+              </button>
+              <button
+                onClick={(e) => this.handleButton('*', e)}
+                className='num'>
+                *
+              </button>
+            </div>
+            <div className='row'>
+              <button onClick={(e) => this.handleButton(0, e)} className='num'>
+                0
+              </button>
+              <button
+                onClick={(e) => this.handleButton('=', e)}
+                className='num'>
+                =
+              </button>
+              <button
+                onClick={(e) => this.handleButton('+', e)}
+                className='num'>
+                +
+              </button>
+              <button
+                onClick={(e) => this.handleButton('-', e)}
+                className='num'>
+                -
+              </button>
+            </div>
           </div>
         </div>
       </div>

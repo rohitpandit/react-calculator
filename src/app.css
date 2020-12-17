@@ -1,6 +1,15 @@
+.page{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .app{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 1rem;
     margin: auto ; 
     width: fit-content;  
